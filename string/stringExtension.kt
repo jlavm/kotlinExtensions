@@ -35,3 +35,11 @@ fun String?.convertBase64ToBitmap(): Bitmap? {
 
 //Convert empty or null strings to null
 fun String.normalizeToNull(): String? = if (this.isBlank() || this.isEmpty()) null else this
+
+
+//Convert string to charsequence
+fun String?.fromStringToCharSequence(): CharSequence =
+    this?.let { StringBuilder().append(it) } ?: ""
+
+//Remove spaces from given string
+fun String?.removeAllWhiteSpaces(): String? = this?.replace("\\s".toRegex(), "")
